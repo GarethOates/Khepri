@@ -1,4 +1,4 @@
-require('./voter.component.tag');
+require('./components/voter.component.tag');
 
 <app>
   <voter-component></voter-component>
