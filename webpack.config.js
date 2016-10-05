@@ -24,7 +24,10 @@ module.exports = {
             {
                 test: /\.js$|\.tag$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                loader: 'babel-loader',
+                query: {
+                     presets: ['es2015']
+                 }
             }
         ]
     },
