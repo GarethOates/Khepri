@@ -5,15 +5,23 @@ module.exports = {
     entry: './src/app/index',
     output: {
         path: __dirname + '/dist',
-        filename: 'app.js'
+        filename: 'scripts/app.js'
     },
     plugins: [
         new webpack.ProvidePlugin({
             riot: 'riot'
         }),
-        new CopyWebpackPlugin([{
-                from: './src/index.html', to: './index.html'
-        }])
+        new CopyWebpackPlugin([
+            {
+                from: './src/index.html',
+                to: './index.html'
+            },
+            {
+                context: 'src/app/components',
+                from: '**/*.css',
+                to: './styles'
+            }
+        ])
     ],
     module: {
         preLoaders: [{
@@ -26,10 +34,6 @@ module.exports = {
             }
         }],
         loaders: [
-            {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader'
-            },
             {
                 test: /\.js$|\.tag$/,
                 exclude: /node_modules/,
