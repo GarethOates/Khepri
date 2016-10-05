@@ -1,0 +1,24 @@
+{
+  "name": "riotmodules",
+  "version": "1.0.0",
+  "description": "A test project for riot and modules",
+  "main": "index.html",
+  "scripts": {
+    "test": "karma start"
+  },
+  "keywords": [
+    "riot",
+    "modules",
+    "webpack"
+  ],
+  "author": "Gareth Oates (goatie@gmail.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-loader": "^6.2.5",
+    "riot": "^2.6.2",
+    "riotjs-loader": "^3.0.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  }
+}
