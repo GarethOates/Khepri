@@ -22,6 +22,10 @@ module.exports = {
         }],
         loaders: [
             {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
+            },
+            {
                 test: /\.js$|\.tag$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
@@ -30,6 +34,9 @@ module.exports = {
                  }
             }
         ]
+    },
+    resolve: {
+        extensions: ['', '.js', '.tag']
     },
     devServer: {
         contentBase: './public'

@@ -1,6 +1,6 @@
-require('./app.tag');
-require('./voter.component.tag');
-require('style!css!./voter.component.css');
+require('./app');
+require('./voter.component');
+require('./voter.component.css');
 
 riot.mount('app');
 
