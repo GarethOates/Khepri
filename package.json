@@ -1,15 +1,19 @@
 {
-  "name": "riotmodules",
+  "name": "RiotReduxObservables",
   "version": "1.0.0",
-  "description": "A test project for riot and modules",
+  "description": "A test project for riot and redux observables",
   "main": "index.html",
+  "repository": "git@github.com:GarethOates/Riot-Template.git",
   "scripts": {
     "test": "karma start"
   },
   "keywords": [
     "riot",
     "modules",
-    "webpack"
+    "webpack",
+    "redux",
+    "redux-observables",
+    "RxJS"
   ],
   "author": "Gareth Oates (goatie@gmail.com)",
   "license": "MIT",
@@ -25,6 +29,7 @@
     "webpack-dev-server": "^1.16.1"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "jquery": "^3.1.1",
     "redux": "^3.6.0",
     "redux-observable": "^0.12.1",

@@ -20,6 +20,11 @@ module.exports = {
                 context: 'src/app/components',
                 from: '**/*.css',
                 to: './styles'
+            },
+            {
+                context: 'node_modules/bootstrap/dist/css',
+                from: '*.css',
+                to: './styles/bootstrap'
             }
         ])
     ],

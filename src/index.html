@@ -3,10 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>TestApp</title>
-    <link
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        rel="stylesheet">
+    <title>Khepri</title>
+    <link href="styles/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="styles/voter/voter.component.css" rel="stylesheet">
     <link href="styles/like/like.component.css" rel="stylesheet">
 </head>
@@ -15,10 +13,55 @@
     <div class="container">
         <div class="row">
             <div class="jumbotron">
-                <h1>Test App</h1>
-                <h3>Webpack / Riot / Redux</h3>
+                <h1>Khepri</h1>
+                <p>
+                    Khepri is the name given to a collection of Riot components I have
+                    created. They are each provided data by a Redux store and use the
+                    redux-observable middleware in order to take advantage of RxJS
+                    Observables through the use of 'Epics'.
+                </p>
+                <p>
+                    <a
+                        class="btn btn-primary btn-lg"
+                        href="http://riotjs.com/"
+                        target="_blank"
+                        role="button">
+                        Learn more
+                    </a>
+                </p>
             </div>
-            <app id="mainApp"></app>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">UpVote or DownVote</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="media-left">
+                        <voter-component></voter-component>
+                    </div>
+                    <div class="media-body">
+                        This is the voter component. Similar to that which you
+                        see in the likes of StackOverflow and other sites.
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Like it?</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="media-left">
+                        <like-component></like-component>
+                    </div>
+                    <div class="media-body">
+                        This is the like component.  Similar to that found on
+                        the instagram.  As the name suggests it allows you to show that
+                        you like something.
+                        </thead>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="scripts/app.js"></script>

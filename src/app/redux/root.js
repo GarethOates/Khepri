@@ -1,4 +1,3 @@
-import Rx from 'rxjs/Rx';
 import { fetchUserEpic, userReducer } from './modules/github';
 import { voteReducer } from './modules/voter';
 import { likeReducer } from './modules/like';

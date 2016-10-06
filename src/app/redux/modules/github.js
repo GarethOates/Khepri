@@ -1,4 +1,6 @@
 import { Observable } from 'rxjs/Observable';
+import "rxjs/add/operator/mergemap";
+import "rxjs/add/operator/map";
 import $ from 'jquery';
 
 const
