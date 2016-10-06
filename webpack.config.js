@@ -30,7 +30,6 @@ module.exports = {
             loader: 'riotjs-loader',
             query: {
                 type: 'none',
-                modular: true
             }
         }],
         loaders: [
