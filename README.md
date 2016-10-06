@@ -1,5 +1,5 @@
-# Riot-Template
-Experimenting with Riot, Redux and riot-observable
+# Khepri
+Khepri is a collection of Riot Components I have created as a means of learning more about Riot, Redux and RxJS via redux-observables.
 
 ## Installation Instructions
 This project uses npm for dependencies and webpack for bundling etc.
