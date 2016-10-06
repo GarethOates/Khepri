@@ -24,7 +24,12 @@ module.exports = {
             {
                 context: 'node_modules/bootstrap/dist/css',
                 from: '*.css',
-                to: './styles/bootstrap'
+                to: './styles/bootstrap/css'
+            },
+            {
+                context: 'node_modules/bootstrap/dist/fonts',
+                from: '*.*',
+                to: './styles/bootstrap/fonts'
             }
         ])
     ],
