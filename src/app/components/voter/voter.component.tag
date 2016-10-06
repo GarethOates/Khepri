@@ -31,7 +31,7 @@
 
     function raiseVote() {
         tag.observable.trigger('vote', {
-            voteCount: tag.voteCount,
+            voteCount: tag.voteCount + tag.myVote,
             myVote: tag.myVote
         });
     }

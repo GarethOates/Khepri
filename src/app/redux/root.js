@@ -1,12 +1,20 @@
 import Rx from 'rxjs/Rx';
 import { fetchUserEpic, userReducer } from './modules/github';
-import { compose, createStore, applyMiddleware } from 'redux';
+import { voteReducer } from './modules/voter';
+import { likeReducer } from './modules/like';
+import { compose, createStore, applyMiddleware, combineReducers } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 
 const
     epicMiddleware = createEpicMiddleware(fetchUserEpic),
 
-    store = createStore(userReducer,
+    store = createStore(
+        combineReducers(
+            {
+                user: userReducer,
+                vote: voteReducer,
+                like: likeReducer
+            }),
         compose(applyMiddleware(epicMiddleware),
         window.devToolsExtension ? window.devToolsExtension() : f => f
     )
