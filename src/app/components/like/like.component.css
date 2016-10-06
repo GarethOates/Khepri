@@ -1,0 +1,8 @@
+.glyphicon-heart {
+    cursor: pointer;
+    color: #ccc;
+}
+
+.liked {
+    color: hotpink;
+}
