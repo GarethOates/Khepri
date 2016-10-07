@@ -11,13 +11,12 @@ module.exports = (config) => {
             'karma-riot'
         ],
         files: [
-            'src/**/*.tag',
-            'src/**/*.spec.js'
+            './src/**/*.spec.js'
         ],
         preprocessors: {
             '**/*.tag': ['riot']
         },
-        browsers: ['phantomjs'],
+        browsers: ['PhantomJS'],
         reporters: ['mocha'],
         failOnEmptyTestSuite: false,
         singleRun: true
