@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
-import "rxjs/add/operator/mergemap";
-import "rxjs/add/operator/map";
+import 'rxjs/add/operator/mergemap';
+import 'rxjs/add/operator/map';
 import $ from 'jquery';
 
 const
@@ -10,7 +10,7 @@ const
     fetchUserComplete = (payload) => ({ type: FETCH_USER_COMPLETE, payload }),
 
     searchGitHub = (username) => {
-        let promise = $.ajax(`https://api.github.com/users/${username}`).promise()
+        let promise = fetch(`https://api.github.com/users/${username}`)
         return Observable.fromPromise(promise);
     };
 
