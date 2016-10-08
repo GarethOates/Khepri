@@ -1,17 +1,25 @@
 <search-component>
-
-    <label for="username">Search:</label>
-    <input id="username" type="text" placeholder="Github Username"></input>
-    <button onclick="{submit}">Search</button>
+    <div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">
+                <i class="glyphicon glyphicon-search"></i>
+            </span>
+            <input
+                id="input"
+                onkeyup={search}
+                type="text"
+                class="form-control"
+                placeholder="Username">
+        </div>
+    </div>
 
     <script>
-        this.username = document.getElementById('username').value;
         this.observable = this.opts.observable;
 
-        this.submit = function() {
-            this.observable.trigger('search', this.username);
+        this.search = function() {
+            let searchTerm = document.getElementById("input").value;
+            this.observable.trigger('search', searchTerm);
         }
-
     </script>
 
 </search-component>
