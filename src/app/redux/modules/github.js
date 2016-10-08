@@ -11,11 +11,11 @@ export const fetchUser = (username) => ({ type: FETCH_USER, payload: username })
 
 export const fetchUserEpic = action$ =>
     action$.ofType(FETCH_USER)
-        .debounceTime(250)
+        .debounceTime(500)
         .mergeMap(action =>
             Rx.Observable.fromPromise(
                 ajax.getJSON(`https://api.github.com/users/${action.payload}`)
-            )
+            ).onErrorResumeNext()
             .map(fetchUserComplete)
         )
 

@@ -16,9 +16,10 @@
     <script>
         this.observable = this.opts.observable;
 
-        this.search = function() {
+        this.search = () => {
             let searchTerm = document.getElementById("input").value;
-            this.observable.trigger('search', searchTerm);
+            if (searchTerm)
+                this.observable.trigger('search', searchTerm);
         }
     </script>
 
