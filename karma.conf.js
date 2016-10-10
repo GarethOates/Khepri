@@ -2,12 +2,23 @@
 module.exports = (config) => {
     config.set({
         basepath: '',
-        frameworks: ['mocha', 'chai', 'riot'],
+        frameworks: [
+            'mocha',
+            'chai',
+            'riot'
+        ],
         files: [
             './src/**/*.spec.js'
         ],
         preprocessors: {
-            '**/*.tag': ['riot']
+            './src/**/*.tag': ['riot'],
+            './src/**/*.js': ['babel']
+        },
+        babelPreprocessor: {
+            options: {
+                presets: ['es2015'],
+                sourceMap: 'inline'
+            }
         },
         browsers: ['Chrome'],
         reporters: ['mocha'],
