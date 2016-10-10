@@ -1,6 +1,6 @@
 import riot from 'riot';
 import store from '../../redux/root';
-import { searchComponent } from './search.component';
+import { searchComponent } from '../../components/search/search.component';
 import { fetchUser } from '../../redux/modules/github';
 
 class searchController {

@@ -1,6 +1,6 @@
 import riot from 'riot';
 import store from '../../redux/root';
-import likecomponent from './like.component';
+import likecomponent from '../../components/like/like.component';
 import { like } from '../../redux/modules/like';
 
 class likeController {

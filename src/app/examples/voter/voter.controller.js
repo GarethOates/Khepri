@@ -1,6 +1,6 @@
 import riot from 'riot';
 import store from '../../redux/root';
-import votercomponent from './voter.component';
+import votercomponent from '../../components/voter/voter.component';
 import { updateVote } from '../../redux/modules/voter';
 
 
