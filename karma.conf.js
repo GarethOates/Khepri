@@ -8,11 +8,11 @@ module.exports = (config) => {
             'riot'
         ],
         files: [
-            './src/**/tests/tests.js'
+            './dist/scripts/app.js',
+            './src/**/*.spec.js'
         ],
         preprocessors: {
             './src/**/*.tag': ['riot'],
-            './src/**/tests/tests.js': ['webpack'],
             './src/**/*.js': ['babel']
         },
         babelPreprocessor: {
