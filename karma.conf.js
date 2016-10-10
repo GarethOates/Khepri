@@ -9,7 +9,7 @@ module.exports = (config) => {
         preprocessors: {
             '**/*.tag': ['riot']
         },
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
         reporters: ['mocha'],
         failOnEmptyTestSuite: false,
         singleRun: true
