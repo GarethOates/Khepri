@@ -32,10 +32,12 @@
     };
 
     function raiseVote() {
-        tag.observable.trigger('vote', {
-            voteCount: originalCount + tag.myVote,
-            myVote: tag.myVote
-        });
+        if (tag.observable) {
+            tag.observable.trigger('vote', {
+                voteCount: originalCount + tag.myVote,
+                myVote: tag.myVote
+            });
+        }
     }
 
     </script>

@@ -12,13 +12,15 @@
         this.isLiked = !this.isLiked;
         this.noOfLikes += this.isLiked ? 1 : -1;
 
-        this.observable.trigger(
-            'like',
-            {
-                noOfLikes: this.noOfLikes,
-                isLiked: this.isLiked
-            }
-        );
+        if (this.observable) {
+            this.observable.trigger(
+                'like',
+                {
+                    noOfLikes: this.noOfLikes,
+                    isLiked: this.isLiked
+                }
+            );
+        }
     }
 
     </script>

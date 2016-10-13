@@ -18,7 +18,7 @@
 
         this.search = () => {
             let searchTerm = document.getElementById("input").value;
-            if (searchTerm)
+            if (searchTerm && this.observable)
                 this.observable.trigger('search', searchTerm);
         }
     </script>
