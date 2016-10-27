@@ -13,7 +13,7 @@ const
         vote: voteReducer,
         like: likeReducer,
         todos: todoReducer
-    }
+    },
 
     store = createStore(
         combineReducers(reducers),
@@ -23,7 +23,7 @@ const
     );
 
 if (window.devToolsExtension) {
-  window.devToolsExtension.updateStore(store);
+  `__REDUX_DEVTOOLS_EXTENSION_COMPOSE__`
 }
 
 module.exports = store

@@ -11,14 +11,14 @@ class todoController {
 
         this.mountTag();
         this.listen();
-        this.updateComponent();
     }
 
     mountTag() {
-        this.todo = riot.mount('todo-component', store.getState().items)[0];
+        this.todo = riot.mount('todo-component', store.getState().todos)[0];
 
         if (this.todo) {
             this.todo.update({ observable: this.obs });
+            this.updateComponent();
         }
     }
 
@@ -26,11 +26,15 @@ class todoController {
         this.obs.on('updated', () => {
             console.warn('Tag Updated');
         });
+
+        store.subscribe(() => {
+            this.todo.update(store.getState().todos);
+        });
     }
 
-    updateComponent() = {
+    updateComponent() {
         setInterval(function() {
-            store.dispatch(updateItems(store.getState().items));
+            store.dispatch(updateItems(store.getState().todos));
         }, 1000);
     }
 }

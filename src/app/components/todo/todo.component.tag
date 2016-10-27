@@ -1,4 +1,4 @@
-<loop-component>
+<todo-component>
 
     <ol>
         <li each={ todo in todos } >{ todo }</li>
@@ -10,11 +10,11 @@
 
         this.on('update', function() {
             if (this.observable) {
-                this.observable.trigger('updated', new DateTime());
+                this.observable.trigger('updated', 'Component Updated!');
             }
         });
 
     </script>
 
 
-</loop-component>
+</todo-component>
