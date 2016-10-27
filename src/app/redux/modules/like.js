@@ -9,7 +9,7 @@ export function likeReducer (state = { noOfLikes: 15, isLiked: false }, action) 
             return Object.assign({}, state, {
                 noOfLikes: action.payload.noOfLikes,
                 isLiked: action.payload.isLiked
-            })
+            });
 
         default:
             return state;
