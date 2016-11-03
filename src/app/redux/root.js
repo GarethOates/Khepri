@@ -1,7 +1,6 @@
 import { fetchUserEpic, userReducer } from './modules/github';
 import { voteReducer } from './modules/voter';
 import { likeReducer } from './modules/like';
-import { todoReducer } from './modules/todo';
 import { compose, createStore, applyMiddleware, combineReducers } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 
@@ -11,8 +10,7 @@ const
     reducers = {
         user: userReducer,
         vote: voteReducer,
-        like: likeReducer,
-        todos: todoReducer
+        like: likeReducer
     },
 
     store = createStore(
