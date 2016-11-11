@@ -1,11 +1,15 @@
-import { fetchUserEpic, userReducer } from './modules/github';
+import { fetchUserEpic, getUserEpic, userReducer } from './modules/github';
 import { voteReducer } from './modules/voter';
 import { likeReducer } from './modules/like';
 import { compose, createStore, applyMiddleware, combineReducers } from 'redux';
-import { createEpicMiddleware } from 'redux-observable';
+import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
 const
-    epicMiddleware = createEpicMiddleware(fetchUserEpic),
+    rootEpic = combineEpics(
+        fetchUserEpic,
+        getUserEpic
+    ),
+    epicMiddleware = createEpicMiddleware(rootEpic),
 
     reducers = {
         user: userReducer,
@@ -15,7 +19,7 @@ const
 
     store = createStore(
         combineReducers(reducers),
-        compose(applyMiddleware(epicMiddleware),
+        compose(applyMiddleware(createEpicMiddleware(rootEpic)),
         window.devToolsExtension ? window.devToolsExtension() : f => f
         )
     );

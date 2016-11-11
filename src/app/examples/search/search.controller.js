@@ -1,7 +1,7 @@
 import riot from 'riot';
 import store from '../../redux/root';
 import { searchComponent } from '../../components/search/search.component';
-import { fetchUser } from '../../redux/modules/github';
+import { fetchUser, getUser } from '../../redux/modules/github';
 
 class searchController {
 
@@ -25,7 +25,7 @@ class searchController {
     listen() {
 
         this.obs.on('search', (username) => {
-            store.dispatch(fetchUser(username));
+            store.dispatch(getUser(username));
         });
 
         store.subscribe(() => {
