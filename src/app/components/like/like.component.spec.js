@@ -1,4 +1,4 @@
-describe('like.component', function() {
+describe('like.component', function () {
     'use strict';
 
     const element = document.createElement('like-component');
@@ -8,7 +8,7 @@ describe('like.component', function() {
             'isLiked': false
         };
 
-    before(function() {
+    before(function () {
         document.body.appendChild(element);
         tag = riot.mount('like-component', defaultState)[0];
     });
