@@ -1,5 +1,5 @@
 import Rx from 'rxjs/Rx';
-import ajax from 'jquery';
+import $ from 'jquery';
 
 const
     FETCH_USER = 'FETCH_USER',
@@ -16,7 +16,7 @@ export const fetchUserEpic = action$ =>
         .debounceTime(500)
         .mergeMap(action =>
             Rx.Observable.fromPromise(
-                ajax.getJSON(`https://api.github.com/users/${action.payload}`)
+                $.getJSON(`https://api.github.com/users/${action.payload}`)
             ).onErrorResumeNext()
             .map(fetchUserComplete)
         )
@@ -25,7 +25,7 @@ export const getUserEpic = action$ =>
         .debounceTime(500)
         .mergeMap(action =>
             Rx.Observable.fromPromise(
-                ajax.getJSON(`https://api.github.com/users/${action.payload}`)
+                $.getJSON(`https://api.github.com/users/${action.payload}`)
             ).onErrorResumeNext()
             .map(fetchUserComplete)
         )
