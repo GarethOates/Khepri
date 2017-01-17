@@ -11,33 +11,29 @@
     </div>
 
     <script>
-    let tag = this;
 
-    tag.voteCount  = tag.opts.voteCount;
-    tag.myVote     = tag.opts.myVote;
-    tag.observable = tag.opts.observable;
+    let originalCount = this.opts.voteCount;
 
-    let originalCount = tag.opts.voteCount;
+    this.voteCount = this.opts.voteCount;
+    this.myVote    = this.opts.myVote;
 
-    tag.upVote = () => {
-        if (tag.myVote === 1) { return; }
-        tag.myVote++;
-        raiseVote();
+    this.upVote = () => {
+        if (this.myVote === 1) { return; }
+        this.myVote++;
+        this.raiseVote();
     };
 
-    tag.downVote = () => {
-        if (tag.myVote === -1) { return; }
-        tag.myVote--;
-        raiseVote();
+    this.downVote = () => {
+        if (this.myVote === -1) { return; }
+        this.myVote--;
+        this.raiseVote();
     };
 
-    function raiseVote() {
-        if (tag.observable) {
-            tag.observable.trigger('vote', {
-                voteCount: originalCount + tag.myVote,
-                myVote: tag.myVote
-            });
-        }
+    this.raiseVote = () => {
+        this.trigger('vote', {
+            voteCount: originalCount + this.myVote,
+            myVote: this.myVote
+        });
     }
 
     </script>

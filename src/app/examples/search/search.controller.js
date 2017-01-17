@@ -6,25 +6,16 @@ import { fetchUser } from '../../redux/modules/github';
 class searchController {
 
     constructor() {
-
-        this.obs = riot.observable();
-
         this.mountTag();
         this.listen();
-
     }
 
     mountTag() {
-
         this.search = riot.mount('search-component', store.getState().user)[0];
-
-        if (this.search)
-            this.search.update({ observable: this.obs });
     }
 
     listen() {
-
-        this.obs.on('search', (username) => {
+        this.search.on('search', (username) => {
             store.dispatch(fetchUser(username));
         });
 

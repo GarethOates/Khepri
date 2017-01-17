@@ -4,7 +4,6 @@
     </i> <span>{noOfLikes}</span>
 
     <script>
-    this.observable = this.opts.observable;
     this.noOfLikes = this.opts.noOfLikes;
     this.isLiked = this.opts.isLiked;
 
@@ -12,15 +11,13 @@
         this.isLiked = !this.isLiked;
         this.noOfLikes += this.isLiked ? 1 : -1;
 
-        if (this.observable) {
-            this.observable.trigger(
-                'like',
-                {
-                    noOfLikes: this.noOfLikes,
-                    isLiked: this.isLiked
-                }
-            );
-        }
+        this.trigger(
+            'like',
+            {
+                noOfLikes: this.noOfLikes,
+                isLiked: this.isLiked
+            }
+        );
     }
 
     </script>

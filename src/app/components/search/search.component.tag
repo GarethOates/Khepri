@@ -14,12 +14,11 @@
     </div>
 
     <script>
-        this.observable = this.opts.observable;
-
         this.search = () => {
             let searchTerm = document.getElementById("input").value;
-            if (searchTerm && this.observable)
-                this.observable.trigger('search', searchTerm);
+
+            if (searchTerm)
+                this.trigger('search', searchTerm);
         }
     </script>
 
