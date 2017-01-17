@@ -19,12 +19,14 @@
 
     this.upVote = () => {
         if (this.myVote === 1) { return; }
+
         this.myVote++;
         this.raiseVote();
     };
 
     this.downVote = () => {
         if (this.myVote === -1) { return; }
+
         this.myVote--;
         this.raiseVote();
     };
@@ -34,7 +36,7 @@
             voteCount: originalCount + this.myVote,
             myVote: this.myVote
         });
-    }
+    };
 
     </script>
 </voter-component>
