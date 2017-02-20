@@ -8,6 +8,7 @@ const
     rootEpic = combineEpics(
         fetchUserEpic
     ),
+
     epicMiddleware = createEpicMiddleware(rootEpic),
 
     reducers = {
